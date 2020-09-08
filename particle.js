@@ -1,5 +1,15 @@
 class Particle {
-	constructor( x, y, vx = 0, vy = 0, ax = 0, ay = 0 ) {
+
+	/**
+	 *
+	 * @param {number} vx Velocity x
+	 * @param {number} vy Velocity y
+	 * @param {number} x Position x
+	 * @param {number} y Position y
+	 * @param {number} ax Acceleration x
+	 * @param {number} ay Acceleration y
+	 */
+	constructor( vx = 0, vy = 0, x = 0, y = 0, ax = 0, ay = 0 ) {
 		this.x = x;
 		this.y = y;
 		this.vx = vx;
@@ -17,7 +27,7 @@ class Particle {
 		this.vx += this.ax;
 		this.vy += this.ay;
 
-		this.x += vx;
-		this.y += vy;
+		this.x += this.vx;
+		this.y += this.vy;
 	}
 }

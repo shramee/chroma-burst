@@ -16,14 +16,27 @@ class Particle {
 		this.vy = vy;
 		this.ax = ax;
 		this.ay = ay;
+		this.fx = 0;
+		this.fy = 0;
 	}
 
-	force( fx, fy ) {
+	resetForce() {
+		this.ax = 0;
+		this.ay = 0;
+	}
+
+	addForce( fx, fy ) {
 		this.ax += fx;
 		this.ay += fy;
 	}
 
+	force( fx, fy ) {
+		this.ax = fx;
+		this.ay = fy;
+	}
+
 	tick() {
+
 		this.vx += this.ax;
 		this.vy += this.ay;
 
